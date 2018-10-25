@@ -1,0 +1,31 @@
+.popup{
+    display: none;
+}
+.popup__shadow{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.popup__window{
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    background: #fff;
+    border: 3px solid #3c3c75;
+}
+
+.popup__main-text{
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.popup__text{
+    font-size: 15px;
+    line-height: 20px;
+}

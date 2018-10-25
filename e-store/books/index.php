@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("Каталог книг");
 	)
 );?></div>
 <?endif?>
-<?$APPLICATION->IncludeComponent("bitrix:catalog", ".default", Array(
+<?$APPLICATION->IncludeComponent("bitrix:catalog", "test_shop_catalog", Array(
 	"IBLOCK_TYPE" => "books",
 	"IBLOCK_ID" => "4",
 	"BASKET_URL" => "/personal/cart/",
