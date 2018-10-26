@@ -2,22 +2,23 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Демонстрационная версия продукта «1С-Битрикс: Управление сайтом»");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
-$APPLICATION->SetTitle("Каталог книг");
+$APPLICATION->SetTitle("Каталог товаров");
 ?>
 <hr />
 
-<?$APPLICATION->IncludeComponent("bitrix:catalog", ".default", Array(
-	"IBLOCK_TYPE" => "books",
-	"IBLOCK_ID" => "4",
+<?$APPLICATION->IncludeComponent("bitrix:catalog", "test_shop_catalog", Array(
+	"IBLOCK_TYPE" => "catalog",
+	"IBLOCK_ID" => "11",
+	"INSTANT_RELOAD" => 'Y',
 	"BASKET_URL" => "/personal/cart/",
 	"ACTION_VARIABLE" => "action",
 	"PRODUCT_ID_VARIABLE" => "id",
 	"SECTION_ID_VARIABLE" => "SECTION_ID",
 	"SEF_MODE" => "Y",
-	"SEF_FOLDER" => "/e-store/books/",
-	"AJAX_MODE" => "N",
+	"SEF_FOLDER" => "/test/",
+	"AJAX_MODE" => "Y",
 	"AJAX_OPTION_SHADOW" => "Y",
-	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_JUMP" => "Y",
 	"AJAX_OPTION_STYLE" => "Y",
 	"AJAX_OPTION_HISTORY" => "N",
 	"CACHE_TYPE" => "A",
@@ -29,14 +30,12 @@ $APPLICATION->SetTitle("Каталог книг");
 	"USE_FILTER" => "Y",
 	"FILTER_NAME" => "FILTER",
 	"FILTER_FIELD_CODE" => array(
-		0 => "NAME",
-		1 => "",
+		0 => "",
 	),
 	"FILTER_PROPERTY_CODE" => array(
-		0 => "YEAR",
-		1 => "ISBN",
-		2 => "PUBLISHER",
-		3 => "",
+		0 => "BRAND",
+		1 => "COLOR",
+		2 => "",
 	),
 	"FILTER_PRICE_CODE" => array(
 	),
@@ -68,7 +67,7 @@ $APPLICATION->SetTitle("Каталог книг");
 	"COMPARE_ELEMENT_SORT_FIELD" => "sort",
 	"COMPARE_ELEMENT_SORT_ORDER" => "asc",
 	"PRICE_CODE" => array(
-		0 => "RETAIL",
+		0 => "BASE",
 	),
 	"USE_PRICE_COUNT" => "N",
 	"SHOW_PRICE_COUNT" => "1",
@@ -83,8 +82,8 @@ $APPLICATION->SetTitle("Каталог книг");
 		0 => "",
 		1 => "",
 	),
-	"PAGE_ELEMENT_COUNT" => "5",
-	"LINE_ELEMENT_COUNT" => "1",
+	"PAGE_ELEMENT_COUNT" => "6",
+	"LINE_ELEMENT_COUNT" => "3",
 	"ELEMENT_SORT_FIELD" => "sort",
 	"ELEMENT_SORT_ORDER" => "asc",
 	"LIST_PROPERTY_CODE" => array(
@@ -115,18 +114,19 @@ $APPLICATION->SetTitle("Каталог книг");
 	"ALSO_BUY_MIN_BUYES" => "2",
 	"DISPLAY_TOP_PAGER" => "N",
 	"DISPLAY_BOTTOM_PAGER" => "Y",
-	"PAGER_TITLE" => "Книги",
+	"PAGER_TITLE" => "Продукты",
 	"PAGER_SHOW_ALWAYS" => "N",
-	"PAGER_TEMPLATE" => "orange",
+	"PAGER_TEMPLATE" => "testshop_navigation",
 	"PAGER_DESC_NUMBERING" => "N",
 	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 	"PAGER_SHOW_ALL" => "N",
 	"AJAX_OPTION_ADDITIONAL" => "",
 	"SEF_URL_TEMPLATES" => array(
-		"sections" => "",
+		"sections" => "filter/#SMART_FILTER_PATH#/apply/",
 		"section" => "#SECTION_ID#/",
 		"element" => "#SECTION_ID#/#ELEMENT_ID#/",
 		"compare" => "compare.php?action=#ACTION_CODE#",
+		"smart_filter"=>"/filter/#SMART_FILTER_PATH#/apply/",
 	),
 	"VARIABLE_ALIASES" => array(
 		"compare" => array(

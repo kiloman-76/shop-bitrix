@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Заказы");
-?><?$APPLICATION->IncludeComponent("bitrix:sale.order.ajax", ".default", array(
+?><?$APPLICATION->IncludeComponent("bitrix:sale.order.ajax", "testshop_order", array(
 	"PAY_FROM_ACCOUNT" => "Y",
 	"COUNT_DELIVERY_TAX" => "Y",
 	"COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",

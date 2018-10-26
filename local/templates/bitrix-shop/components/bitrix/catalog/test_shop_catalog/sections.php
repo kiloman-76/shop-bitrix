@@ -1,3 +1,4 @@
+
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 /** @var array $arParams */
@@ -103,7 +104,7 @@ $APPLICATION->IncludeComponent(
 
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
-	"",
+	"testshop_section",
 	array(
 		"SHOW_ALL_WO_SECTION" => "Y",
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],

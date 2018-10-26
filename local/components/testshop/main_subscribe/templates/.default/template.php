@@ -26,8 +26,6 @@ $request = $context->getRequest();
                 <span style="font-weight: bold;"><?=$arResult['SUCCESS']?></span>
             <?php endif;?>
         <?php endif;?>
-        <input type="checkbox" name="subscribe" id="subscribe-agreement" class="subscribe__checkbox">
-        <label for="subscribe-agreement" class="subscribe__label">Я даю согласие на обработку персональных данных</label>
     </div>
 </form>
 <div class="popup">

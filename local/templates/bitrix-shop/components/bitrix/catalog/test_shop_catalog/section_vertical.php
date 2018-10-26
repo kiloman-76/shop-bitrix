@@ -1,4 +1,4 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+ksdcjhdjlvkhdlfjn xnfvkmdfglgnm<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
@@ -249,7 +249,7 @@ if ($isFilter || $isSidebar): ?>
 
 			$intSectionID = $APPLICATION->IncludeComponent(
 				"bitrix:catalog.section",
-				"",
+				"testshop_section",
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -394,7 +394,7 @@ if ($isFilter || $isSidebar): ?>
 						<?
 						$APPLICATION->IncludeComponent(
 							"bitrix:catalog.section",
-							"",
+							"testshop_section",
 							array(
 								"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 								"IBLOCK_ID" => $arParams["IBLOCK_ID"],

@@ -29,90 +29,10 @@
 		);?> </div>
 
 </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"horizontal_multilevel",
-	Array(
-		"ROOT_MENU_TYPE" => "top", 
-		"MAX_LEVEL" => "3", 
-		"CHILD_MENU_TYPE" => "left", 
-		"USE_EXT" => "Y", 
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => Array()
-	)
-);?> 
-<div id="zebra" class="nezebra"></div>
 
-<table id="content">
-  <tbody>
-    <tr><td class="left-column"><?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	".default",
-	Array(
-		"ROOT_MENU_TYPE" => "left", 
-		"MAX_LEVEL" => "1", 
-		"CHILD_MENU_TYPE" => "left", 
-		"USE_EXT" => "Y", 
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(
-			0 => "SECTION_ID",
-			1 => "page",
-		),
-	)
-);?>
+<div id="zebra" ></div>
 
-	<!-- SOCIALNETWORK -->
 
-        <div class="content-block">
-          <div class="content-block-head">Поиск по сайту</div>
-
-          <div class="content-block-body"><?$APPLICATION->IncludeComponent(
-	"bitrix:search.form",
-	".default",
-	Array(
-		"PAGE" => "/search/" 
-	)
-);?> </div>
-        </div>
-      
-        <div class="content-block">
-          <div class="content-block-head">Авторизация</div>
-        
-          <div class="content-block-body"><?$APPLICATION->IncludeComponent(
-	"bitrix:system.auth.form",
-	".default",
-	Array(
-		"REGISTER_URL" => "/auth/", 
-		"PROFILE_URL" => "/personal/profile/" 
-	)
-);?></div>
-        </div>
-      
-		
-<div class="content-block">
-	<div class="content-block-head">Подписка на рассылку</div>
-		<div class="content-block-body"><?$APPLICATION->IncludeComponent(
-			"bitrix:subscribe.form",
-			".default",
-			Array(
-				"PAGE" => "#SITE_DIR#personal/subscribe/subscr_edit.php",
-				"SHOW_HIDDEN" => "N",
-				"USE_PERSONALIZATION"	=>	"N",
-				"CACHE_TYPE" => "A",
-				"CACHE_TIME" => "3600"
-			)
-			);?>
-	</div>
-</div>
-      
-        <!--BANNER_LEFT-->
-
-        </div>
-      </td><td class="main-column">
         <div id="navigation"><?$APPLICATION->IncludeComponent(
 	"bitrix:breadcrumb",
 	".default",
@@ -122,6 +42,8 @@
 		"SITE_ID" => "" 
 	)
 );?> </div>
+<div class="container">
+
       
         <h1 id="pagetitle"><?$APPLICATION->ShowTitle(false)?></h1>
       
