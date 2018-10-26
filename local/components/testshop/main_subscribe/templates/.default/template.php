@@ -28,14 +28,6 @@ $request = $context->getRequest();
         <?php endif;?>
     </div>
 </form>
-<div class="popup">
-    <div class="popup__shadow"></div>
-    <div class="popup__window">
-        <div class="popup__close">X</div>
-        <span class="popup__main-text">Вы подписались на нашу рассылку!</span><br>
-        <span class="popup__text">Ваш промокод: </span>
-    </div>
-</div>
 <?php //if($_REQUEST['AJAX_CALL']){
 //    die();
 //}?>

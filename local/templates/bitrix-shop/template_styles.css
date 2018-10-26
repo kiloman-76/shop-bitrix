@@ -20,7 +20,6 @@ body
 /*Font*/
 body
 {
-	font-size: 80%;
 	font-family: Tahoma, Verdana, Helvetica, sans-serif;
 	color: #333;
 	background-color: #fff;
@@ -209,8 +208,7 @@ hr
 	text-align:right;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
-	height:40px;
-	padding:8px;
+	padding:16px;
 	
 }
 
@@ -284,3 +282,12 @@ table.data-table tfoot td
 
 /* social network*/
 div#sonet_events_ms_message {width:150px;}
+
+/* authorisation link*/
+a.auth__link {
+	float: right;
+	color: #fff;
+	font-weight: bold;
+	margin: 36px;
+	font-size: 20px;
+}

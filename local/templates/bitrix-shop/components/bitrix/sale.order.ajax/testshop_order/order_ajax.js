@@ -358,7 +358,7 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 										className: "webform-button-link-cancel" ,
 										events: {click: function(){
 											this.popupWindow.close();
-                                            document.location.href = '/';
+                                            document.location.href = '/test/';
 										}}
 									})
 								]

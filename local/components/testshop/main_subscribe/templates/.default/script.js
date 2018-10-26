@@ -16,6 +16,29 @@ $( document ).ready(function() {
                 $("#main-subscribe-form").find('.subscribe__agreement').prepend("<p class='error'>" + data['ERROR'] + "</p>");
             } else {
                 $(".popup__text").append(data['PROMOCODE']);
+                var orderPopup = new BX.PopupWindow(
+                    "order_popup",
+                    null,
+                    {
+                        content: '<b>Ваш промокод:'+ data['PROMOCODE'] +'</b>',
+                        closeIcon: false,
+                        titleBar: {content: BX.create("span", {html:'<p>Вы подписались на нашу рассылку!</p>', 'props': {'className': 'access-title-bar'}})},
+                        zIndex: 1000,
+                        offsetLeft: 0,
+                        offsetTop: 0,
+                        draggable: {restrict: false},
+                        buttons: [
+                            new BX.PopupWindowButton({
+                                text: "Закрыть" ,
+                                className: "webform-button-link-cancel" ,
+                                events: {click: function(){
+                                    this.popupWindow.close();
+                                    document.location.href = '/test/';
+                                }}
+                            })
+                        ]
+                    });
+                orderPopup.show();
                 $(".popup").show();
                 $(".popup__close").on('click', function () {
                     $(".popup").hide();

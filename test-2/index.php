@@ -6,13 +6,13 @@ $APPLICATION->SetTitle("Каталог книг");
 ?>
 <hr />
 
-
-<?$APPLICATION->IncludeComponent(
-	"testshop:main_subscribe",
-	"",
-	Array(
-		'AJAX_MODE' => 'Y'
-	)
-);?>
+<?$APPLICATION->AuthForm('', false, false, 'N', false);?>
+<?//$APPLICATION->IncludeComponent(
+//	"testshop:main_subscribe",
+//	"",
+//	Array(
+//		'AJAX_MODE' => 'Y'
+//	)
+//);?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

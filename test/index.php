@@ -2,15 +2,15 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Демонстрационная версия продукта «1С-Битрикс: Управление сайтом»");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
-$APPLICATION->SetTitle("Каталог книг");
+$APPLICATION->SetTitle("Каталог товаров");
 ?>
-<hr />
+    <hr />
 
 <?$APPLICATION->IncludeComponent("bitrix:catalog", "test_shop_catalog", Array(
 	"IBLOCK_TYPE" => "catalog",
 	"IBLOCK_ID" => "11",
-    "INSTANT_RELOAD" => 'Y',
-	"BASKET_URL" => "/personal/cart/",
+	"INSTANT_RELOAD" => 'Y',
+	"BASKET_URL" => "/cart/",
 	"ACTION_VARIABLE" => "action",
 	"PRODUCT_ID_VARIABLE" => "id",
 	"SECTION_ID_VARIABLE" => "SECTION_ID",
@@ -82,8 +82,8 @@ $APPLICATION->SetTitle("Каталог книг");
 		0 => "",
 		1 => "",
 	),
-	"PAGE_ELEMENT_COUNT" => "5",
-	"LINE_ELEMENT_COUNT" => "1",
+	"PAGE_ELEMENT_COUNT" => "6",
+	"LINE_ELEMENT_COUNT" => "3",
 	"ELEMENT_SORT_FIELD" => "sort",
 	"ELEMENT_SORT_ORDER" => "asc",
 	"LIST_PROPERTY_CODE" => array(
@@ -114,9 +114,9 @@ $APPLICATION->SetTitle("Каталог книг");
 	"ALSO_BUY_MIN_BUYES" => "2",
 	"DISPLAY_TOP_PAGER" => "N",
 	"DISPLAY_BOTTOM_PAGER" => "Y",
-	"PAGER_TITLE" => "Книги",
+	"PAGER_TITLE" => "Продукты",
 	"PAGER_SHOW_ALWAYS" => "N",
-	"PAGER_TEMPLATE" => "orange",
+	"PAGER_TEMPLATE" => "testshop_navigation",
 	"PAGER_DESC_NUMBERING" => "N",
 	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 	"PAGER_SHOW_ALL" => "N",

@@ -113,7 +113,7 @@ use \Bitrix\Main\Localization\Loc;
 		?>
 	</div>
 	<div class="product-item-title">
-		<span title="<?=$productTitle?>"><?=$productTitle?></span>
+		<span href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$productTitle?>"><?=$productTitle?></span>
 	</div>
 	<?
 	if (!empty($arParams['PRODUCT_BLOCKS_ORDER']))
@@ -293,29 +293,12 @@ use \Bitrix\Main\Localization\Loc;
 							{
 								?>
 								<div class="product-item-button-container">
-									<?
-									if ($showSubscribe)
-									{
-										$APPLICATION->IncludeComponent(
-											'bitrix:catalog.product.subscribe',
-											'',
-											array(
-												'PRODUCT_ID' => $actualItem['ID'],
-												'BUTTON_ID' => $itemIds['SUBSCRIBE_LINK'],
-												'BUTTON_CLASS' => 'btn btn-default '.$buttonSizeClass,
-												'DEFAULT_DISPLAY' => true,
-												'MESS_BTN_SUBSCRIBE' => $arParams['~MESS_BTN_SUBSCRIBE'],
-											),
-											$component,
-											array('HIDE_ICONS' => 'Y')
-										);
-									}
-									?>
-									<a class="btn btn-link <?=$buttonSizeClass?>"
-										id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" href="javascript:void(0)" rel="nofollow">
-										<?=$arParams['MESS_NOT_AVAILABLE']?>
-									</a>
-								</div>
+                                    <span>Авторизуйтесь, чтобы добавить товар в корзину</span>
+                                    <a class="btn btn-default <?=$buttonSizeClass?>"
+                                       id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" href="/auth" >
+                                        Авторизация
+                                    </a>
+                                </div>
 								<?
 							}
 						}

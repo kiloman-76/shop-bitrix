@@ -22,11 +22,18 @@
 
 	<a href="/" title="Главная" id="company_logo"></a>
 
-  <div id="header_menu"><?$APPLICATION->IncludeFile(
-			$APPLICATION->GetTemplatePath("include_areas/header_icons.php"),
-			Array(),
-			Array("MODE"=>"php")
-		);?> </div>
+    <div class="auth">
+		<?php global $USER;?>
+		<?if (!$USER->IsAuthorized()):?>
+            <a href="/auth" class="auth__link js-popup-open-button">
+                <span class="auth__text">Войти</span>
+            </a>
+		<?else:?>
+            <a href="/cart" class="auth__link">
+                <span class="auth__text">Корзина</span>
+            </a>
+		<?php endif;?>
+    </div>
 
 </div>
 
